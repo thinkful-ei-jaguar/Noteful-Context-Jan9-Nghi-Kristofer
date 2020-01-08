@@ -7,7 +7,7 @@ function Notes(props) {
         <section>
             <ul>
                 {props.notes.map((note,index) => 
-                    <PrintNote {...note} key={index} selectNote={props.selectNote}/>
+                    <PrintNote {...note} key={index}/>
                 )}
             </ul>
             <button>

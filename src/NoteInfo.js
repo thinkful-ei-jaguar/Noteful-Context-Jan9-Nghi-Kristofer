@@ -2,12 +2,12 @@ import React from 'react';
 
 import PrintNote from './PrintNote';
 
-function NoteInfo() {
+function NoteInfo(props) {
     return (
         <div>
-            <PrintNote />
+            <PrintNote note={props.note} />
             <p>
-                {'NoteInfo'}
+                {props.note.content}
             </p>
         </div>  
     );
