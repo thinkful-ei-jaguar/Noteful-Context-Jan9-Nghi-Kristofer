@@ -6,6 +6,7 @@ import './App.css';
 import Noteful from './Noteful';
 import Folders from './Folders';
 import Notes from './Notes';
+import store from './store.js';
 
 // Main Route
   // 1. Noteful
@@ -26,7 +27,13 @@ import Notes from './Notes';
   // NoteInfo
   
 class App extends Component {
+  state = {
+    notes: store.notes,
+    folders: store.folders
+  };
+
   render() {
+    console.log(this.state);
     return (
       <>
         <Noteful />
