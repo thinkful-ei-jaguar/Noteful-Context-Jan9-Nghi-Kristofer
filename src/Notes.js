@@ -2,11 +2,13 @@ import React from 'react';
 
 import PrintNote from './PrintNote';
 
-function Notes() {
+function Notes(props) {
     return (
         <section>
             <ul>
-                <PrintNote />
+                {props.notes.map((note,index) => 
+                    <PrintNote {...note} key={index} selectNote={props.selectNote}/>
+                )}
             </ul>
             <button>
                 Add note

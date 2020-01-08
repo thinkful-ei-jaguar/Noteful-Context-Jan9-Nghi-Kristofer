@@ -29,16 +29,23 @@ import store from './store.js';
 class App extends Component {
   state = {
     notes: store.notes,
-    folders: store.folders
+    folders: store.folders,
+    currentNote: ''
   };
 
+  selectNote = (currentNote) => {
+    this.setState({
+      currentNote
+    });
+    console.log(this.state.currentNote);
+  }
+
   render() {
-    console.log(this.state);
     return (
       <>
         <Noteful />
         <Folders />
-        <Notes />
+        <Notes notes={this.state.notes} selectNote={currentNote=>this.selectNote(currentNote)}/>
       </>
     );
   }
