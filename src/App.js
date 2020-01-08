@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Noteful from './Noteful';
+import Folders from './Folders';
+import Notes from './Notes';
+
+// Main Route
+  // 1. Noteful
+  // 1. Folders
+  // 2. FolderForm
+  // 1. Notes
+  // 2. NoteForm
+// Folder Route
+  // 1. Noteful
+  // 1. Folders-SelectFolder
+  // 2. FolderForm
+  // 1. Notes-FilteredNotes
+  // 2. PrintNote
+  // 2. NoteForm
+// Note Route
+  // Noteful
+  // InsideFolder
+  // NoteInfo
+  
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Noteful />
+        <Folders />
+        <Notes />
+      </>
+    );
+  }
 }
 
+
 export default App;
+
