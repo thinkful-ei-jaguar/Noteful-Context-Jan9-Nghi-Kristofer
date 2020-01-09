@@ -1,6 +1,8 @@
 /* eslint-disable react/no-typos */
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { Main } from './Main';
+import { Sidebar } from './Sidebar';
 
 import './App.css';
 
@@ -55,8 +57,10 @@ class App extends Component {
     return (
       <>
         <Noteful />
-        <main>
-          
+        <Main/>
+        <Sidebar/>
+        <Route exact path='/' render={() => <Folders folders={this.state.folders}/>} />
+<Notes notes={this.state.notes} />  
         </main>
         
       </>
@@ -67,5 +71,3 @@ class App extends Component {
 
 export default App;
 
-//<Route exact path='/' render={() => <Folders folders={this.state.folders}/>} />
-//<Notes notes={this.state.notes} />
